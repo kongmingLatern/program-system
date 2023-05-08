@@ -14,22 +14,30 @@
 
 <body>
   <div id="app">
+
     <!-- 头部 -->
     <?php
-    include_once './components/header.php'
+    include_once './views/header.php'
       ?>
     <div class="divider"></div>
+
     <!-- 导航栏 -->
     <?php
-    include_once './components/navbar.php'
+    include_once './views/navbar.php'
       ?>
     <div class="divider"></div>
+
     <!-- 内容 -->
+    <?php
+    include_once './views/main.php'
+      ?>
+
     <div class="divider"></div>
     <!-- 底部 -->
     <?php
-    include_once './components/footer.php'
+    include_once './views/footer.php'
       ?>
+
   </div>
 
   <script>
