@@ -44,6 +44,9 @@
     function redirectToDetailsPage(card) {
       window.location.href = "/pages/detail.php?card=" + card
     }
+    function redirectToPersonal() {
+      window.location.href = "/pages/my.php"
+    }
     createApp({
       data() {
         return {

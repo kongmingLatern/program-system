@@ -1,4 +1,4 @@
-<main class="flex justify-around">
+<main class="flex justify-around max-w-[1200px] mx-auto">
 
   <aside>
     <?php
