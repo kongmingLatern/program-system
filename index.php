@@ -42,6 +42,9 @@
 
   <script>
     const { createApp } = Vue
+    function redirectToDetailsPage(card) {
+      window.location.href = "/pages/detail.php?card=" + card
+    }
     createApp({
       data() {
         return {
