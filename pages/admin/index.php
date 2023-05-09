@@ -9,30 +9,58 @@
 </head>
 
 <body>
+  <?php
+  error_reporting(E_ALL & ~E_NOTICE); // 设置错误报告级别，排除Notice级别的错误
+  include_once '../../views/index/header.php';
+  ?>
   <div class="flex h-screen">
-    <div class="w-1/4 bg-gray-100">
+    <div class="menu w-1/5 bg-gray-100">
       <ul class="p-4">
-        <li class="mb-4">
-          <a href="#" class="text-gray-700 hover:text-gray-900">Dashboard</a>
+        <li class="mb-4 h-[50px] leading-[50px] text-lg">
+          <a href="index.php?page=user" class="hover:text-gray-900 ">用户管理</a>
         </li>
-        <li class="mb-4">
-          <a href="#" class="text-gray-700 hover:text-gray-900">Posts</a>
+        <li class="mb-4 h-[50px] leading-[50px] text-lg">
+          <a href="index.php?page=article" class="hover:text-gray-900">文章管理</a>
         </li>
-        <li class="mb-4">
-          <a href="#" class="text-gray-700 hover:text-gray-900">Comments</a>
+        <li class="mb-4 h-[50px] leading-[50px] text-lg">
+          <a href="index.php?page=category" class="hover:text-gray-900">分类管理</a>
         </li>
-        <li class="mb-4">
-          <a href="#" class="text-gray-700 hover:text-gray-900">Users</a>
+        <li class="mb-4 h-[50px] leading-[50px] text-lg">
+          <a href="index.php?page=comment" class="hover:text-gray-900">评论管理</a>
         </li>
       </ul>
     </div>
-    <div class="w-3/4 bg-gray-200">
-      <div class="p-4">
-        <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
-        <p class="text-gray-700">Welcome to the dashboard!</p>
+    <div class="w-4/5 bg-gray-200">
+      <div class='p-4'>
+        <?php
+        $page = $_GET['page'];
+        if (!$page) {
+          $page = 'user';
+        }
+        switch ($page) {
+          case 'user':
+            include_once './user.php';
+            break;
+          case 'article':
+            include_once './article.php';
+            break;
+          case 'category':
+            include_once './category.php';
+            break;
+          case 'comment':
+            include_once './comment.php';
+            break;
+          default:
+            include_once '../../index.php';
+        }
+        ?>
       </div>
     </div>
   </div>
+
+  <?php
+  include_once '../../views/index/footer.php';
+  ?>
 </body>
 
 </html>

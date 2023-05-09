@@ -1,9 +1,19 @@
 <div class="card w-96 bg-base-100 shadow-xl">
   <div class="card-body">
-    <h2 class="card-title">Card title!</h2>
-    <p>If a dog chews shoes whose shoes does he choose?</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+    <div class="card-title">
+      <img src='/assets/anime.JPG' class="w-12 h-12 object-contain" />
+      <div>
+        <div class="font-normal text-lg">
+          凤之兮原
+        </div>
+        <div class="font-thin text-sm">
+          前端开发
+        </div>
+      </div>
+    </div>
+    <div class="card-actions justify-around mt-2">
+      <button class="btn btn-secondary w-[45%]">关注</button>
+      <button class="btn btn-outline w-[45%]">私信</button>
     </div>
   </div>
 </div>

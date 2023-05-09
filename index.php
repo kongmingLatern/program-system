@@ -11,20 +11,24 @@
   <script src="./js/vue.js"></script>
 </head>
 
-<body>
+<body class='bg-[#F2F3F5]'>
   <div id="app">
 
     <!-- 头部 -->
     <?php
     include_once './views/index/header.php'
       ?>
-    <div class="divider"></div>
+
+    <!-- 轮播图 -->
+
+    <?php
+    include_once './components/carousel.php';
+    ?>
 
     <!-- 导航栏 -->
     <?php
     include_once './views/index/navbar.php'
       ?>
-    <div class="divider"></div>
 
     <!-- 内容 -->
     <?php
