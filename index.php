@@ -16,25 +16,25 @@
 
     <!-- 头部 -->
     <?php
-    include_once './views/header.php'
+    include_once './views/index/header.php'
       ?>
     <div class="divider"></div>
 
     <!-- 导航栏 -->
     <?php
-    include_once './views/navbar.php'
+    include_once './views/index/navbar.php'
       ?>
     <div class="divider"></div>
 
     <!-- 内容 -->
     <?php
-    include_once './views/main.php'
+    include_once './views/index/main.php'
       ?>
 
     <div class="divider"></div>
     <!-- 底部 -->
     <?php
-    include_once './views/footer.php'
+    include_once './views/index/footer.php'
       ?>
 
   </div>
