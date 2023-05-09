@@ -1,34 +1,38 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>管理员页面</title>
-  <link href="../../css/daisy.css" rel="stylesheet">
+  <title>后台管理页面</title>
+  <link rel="stylesheet" href="../../css/daisy.css">
   <script src='../../js/tailwind.js'></script>
 </head>
 
-<body class="bg-gray-100">
-  <div class="container mx-auto px-4 py-8">
-    <h1 class="text-3xl font-semibold mb-6">管理员页面</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <div class="bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-3">用户管理</h2>
-        <p>在此处添加用户管理相关的功能和内容。</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-3">文章管理</h2>
-        <p>在此处添加文章管理相关的功能和内容。</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-3">分类管理</h2>
-        <p>在此处添加分类管理相关的功能和内容。</p>
-      </div>
-      <div class="bg-white p-4 rounded-lg shadow-md">
-        <h2 class="text-xl font-semibold mb-3">评论管理</h2>
-        <p>在此处添加评论管理相关的功能和内容。</p>
+<body>
+  <div class="flex h-screen">
+    <div class="w-1/4 bg-gray-100">
+      <ul class="p-4">
+        <li class="mb-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Dashboard</a>
+        </li>
+        <li class="mb-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Posts</a>
+        </li>
+        <li class="mb-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Comments</a>
+        </li>
+        <li class="mb-4">
+          <a href="#" class="text-gray-700 hover:text-gray-900">Users</a>
+        </li>
+      </ul>
+    </div>
+    <div class="w-3/4 bg-gray-200">
+      <div class="p-4">
+        <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
+        <p class="text-gray-700">Welcome to the dashboard!</p>
       </div>
     </div>
   </div>
 </body>
+
+</html>

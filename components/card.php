@@ -1,3 +1,9 @@
+<!-- 需要传递
+  $id       -- 文章编号
+  $title    -- 文章标题
+  $content  -- 文章内容
+  $cover    -- 文章封面
+ -->
 <div class="card card-side bg-base-100 shadow-xl mb-2">
   <div class="card-body">
     <h2 class="card-title">
