@@ -7,12 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link href="../css/simplemde.css" rel="stylesheet" type="text/css" />
+  <link href='../css/editor.css' rel="stylesheet" type="text/css" />
   <script src='../js/simplemde.js'></script>
 </head>
 
 <body>
   <?php
-  include_once '../components/codemirror.php'
+  include_once '../components/simplemde.php'
     ?>
 </body>
 
