@@ -9,7 +9,6 @@
   <link href="./css/daisy.css" rel="stylesheet" type="text/css" />
   <script src="./js/tailwind.js"></script>
   <script src="./js/vue.js"></script>
-  <script src='./js/vue-router.js'></script>
 </head>
 
 <body>
