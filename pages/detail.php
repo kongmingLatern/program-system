@@ -21,7 +21,7 @@
 
   <!-- 内容 -->
   <?php
-  include_once '../components/card.php'
+  include_once '../components/title.php'
     ?>
 
   <div class="divider"></div>
@@ -43,4 +43,4 @@
   </script> -->
 </body>
 
-</html>>
+</html>

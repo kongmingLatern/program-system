@@ -1,5 +1,4 @@
 <?php
-// $card = $_GET['card'];
 $cardList = array(1, 2, 3, 4, 5);
 foreach ($cardList as $card) {
   $list = <<<'EOT'
