@@ -20,7 +20,7 @@
     $content = $card['content'];
     $cover = $card['cover'];
     $id = $card['id'];
-    include './components/card.php';
+    include 'components/card.php';
   }
   ?>
 </main>

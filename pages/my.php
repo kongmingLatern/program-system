@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的</title>
-  <link rel="stylesheet" href="styles.css">
   <link href="../css/daisy.css" rel="stylesheet" type="text/css" />
   <script src="../js/tailwind.js"></script>
 </head>
