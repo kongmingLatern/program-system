@@ -16,7 +16,7 @@ if ($password != $confirm_password) {
   exit();
 }
 
-$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+$hashed_password = md5($password);
 
 
 $sql = "INSERT INTO user (uid, username, nickname, password, isAuth) VALUES (?, ?, ?, ?, 0)";
