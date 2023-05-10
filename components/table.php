@@ -7,6 +7,7 @@
         <th>Name</th>
         <th>Job</th>
         <th>Favorite Color</th>
+        <th>Operation</th>
       </tr>
     </thead>
     <tbody>
@@ -16,6 +17,9 @@
         <td>Cy Ganderton</td>
         <td>Quality Control Specialist</td>
         <td>Blue</td>
+        <td>
+          <button class='btn btn-error'>删除</button>
+        </td>
       </tr>
       <!-- row 2 -->
       <tr>
@@ -23,6 +27,9 @@
         <td>Hart Hagerty</td>
         <td>Desktop Support Technician</td>
         <td>Purple</td>
+        <td>
+          <button class='btn btn-error'>删除</button>
+        </td>
       </tr>
       <!-- row 3 -->
       <tr>
@@ -30,6 +37,9 @@
         <td>Brice Swyre</td>
         <td>Tax Accountant</td>
         <td>Red</td>
+        <td>
+          <button class='btn btn-error'>删除</button>
+        </td>
       </tr>
     </tbody>
 

@@ -3,14 +3,15 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>我的</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="../css/daisy.css" rel="stylesheet" type="text/css" />
-  <script src="../js/tailwind.js"></script>
+  <title>编辑个人信息</title>
+  <link rel="stylesheet" href="../../css/daisy.css">
+  <script src='../../js/tailwind.js'></script>
 </head>
 
 <body>
+
   <!-- 头部 -->
   <?php
   include_once '../views/index/header.php';
@@ -19,7 +20,7 @@
 
   <!-- 内容 -->
   <?php
-  include_once '../views/my/main.php';
+  include_once '../views/modify/main.php';
   ?>
 
   <div class="divider"></div>
@@ -27,7 +28,6 @@
   <?php
   include_once '../views/index/footer.php';
   ?>
-
 </body>
 
 </html>

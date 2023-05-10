@@ -4,6 +4,12 @@
     <?php
     include_once '../components/title.php';
     ?>
+    <?php
+    include_once '../components/comment_textarea.php';
+    ?>
+    <?php
+    include_once '../components/comment.php';
+    ?>
   </aside>
 
   <aside class='flex flex-col'>
