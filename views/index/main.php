@@ -5,8 +5,8 @@
   $cards = [
     [
       'id' => 1,
-      'title' => 'Card 1',
-      'content' => 'Content 1',
+      'title' => 'Kylin-UI Component',
+      'content' => '# title 123123',
       'cover' => '/assets/anime.JPG'
     ],
     ['id' => 2, 'title' => 'Card 2', 'content' => 'Content 2', 'cover' => '/assets/anime.JPG'],

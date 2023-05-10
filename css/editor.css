@@ -82,3 +82,8 @@ input {
 .aic {
 	align-items: center;
 }
+input:focus {
+	outline: none; /* 移除默认的外部轮廓 */
+	border: none; /* 移除边框 */
+	box-shadow: none; /* 移除阴影效果 */
+}
