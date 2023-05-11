@@ -3,49 +3,32 @@
     <!-- head -->
     <thead>
       <tr>
-        <th>No</th>
-        <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
-        <th>Operation</th>
+        <?php
+        foreach ($table['head'] as $head) {
+          echo "<th>$head</th>";
+        }
+        ?>
       </tr>
     </thead>
     <tbody>
-      <!-- row 1 -->
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-        <td>
-          <button class='btn btn-error'>删除</button>
-        </td>
-      </tr>
-      <!-- row 2 -->
-      <tr>
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-        <td>
-          <button class='btn btn-error'>删除</button>
-        </td>
-      </tr>
-      <!-- row 3 -->
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-        <td>
-          <button class='btn btn-error'>删除</button>
-        </td>
-      </tr>
+      <?php
+      foreach ($table["content"] as $content) {
+        echo "<tr>";
+        foreach ($content as $key => $value) {
+          echo "<td>$value</td>";
+        }
+        echo "<td>";
+        echo "<button class='btn btn-error'>删除</button>";
+        echo "</td>";
+        echo "</tr>";
+      }
+      ?>
+
     </tbody>
 
     <tfoot>
       <tr class="text-center">
-        <th colspan="4">
+        <th colspan="<?php echo count($table["head"]); ?>">
           <?php
           include_once '../../components/pagination.php'
             ?>
