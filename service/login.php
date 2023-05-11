@@ -16,6 +16,7 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
   // 用户名和密码匹配
   $_SESSION['username'] = $username;
+  echo $_SESSION['username'];
   header('Location: ../index.php'); // 修改为登录成功后的页面
 } else {
   // NOTE: 这里应该有更详细的错误提示

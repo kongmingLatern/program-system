@@ -2,13 +2,17 @@
   <!-- 文章卡片 -->
   <div class="flex space-x-4 bg-white rounded-md shadow-sm p-4 mb-4">
     <!-- 文章缩略图 -->
-    <img class="h-24 w-32 object-cover rounded" src="https://via.placeholder.com/200" alt="Article image">
+    <img class="h-30 w-32 object-cover rounded" src="<?php echo $cover; ?>" alt="Article image">
     <!-- 文章内容 -->
-    <div class="flex-1">
+    <div class="flex-1 flex flex-col justify-between">
       <!-- 文章标题 -->
-      <h2 class="text-xl font-bold">文章标题</h2>
+      <h2 class="text-xl font-bold">
+        <?php echo $title; ?>
+      </h2>
       <!-- 文章简介 -->
-      <p class="mt-2 text-gray-700 line-clamp-3">这是文章的简介，可能包含文章的主要内容或摘要。</p>
+      <p class="mt-2 text-gray-700 line-clamp-3">
+        <?php echo $desc ?>
+      </p>
       <!-- 文章信息 -->
       <div class="mt-2 flex items-center space-x-4">
         <div class="flex items-center space-x-1 text-sm text-gray-500">

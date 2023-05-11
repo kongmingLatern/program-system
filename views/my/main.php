@@ -1,12 +1,31 @@
 <main class="w-[1000px] mx-auto">
+  <?php
+  session_start();
+  require_once '../config.php';
+  header('Content-Type: text/html; charset=utf-8');
+  $sql = "SELECT * FROM user WHERE username = '{$_SESSION['username']}'";
+  $result = $conn->query($sql);
+  $user = $result->fetch_assoc();
+  $uid = $user['uid'];
+  $nickname = $user['nickname'];
+  $avatar = $user['avatar'];
+  $desc = $user['desc'];
+  $job = $user['job'];
+  ?>
   <!-- NOTE: 卡片 -->
   <div class="flex">
     <!-- 个人信息卡片 -->
     <div class="w-1/4 p-4">
       <div class="bg-white rounded-md shadow-sm p-4 text-center">
         <img class="h-24 w-24 rounded-full mx-auto" src="https://via.placeholder.com/100" alt="User avatar">
-        <h2 class="mt-2 text-center text-2xl font-bold">Username</h2>
-        <p class="mt-1 text-center text-gray-500 text-sm">Software Engineer</p>
+        <h2 class="mt-2 text-center text-2xl font-bold">
+          <?php echo $nickname; ?>
+        </h2>
+        <p class="mt-1 text-center text-gray-500 text-sm">
+          <?php
+          echo $job;
+          ?>
+        </p>
         <button class="btn btn-outline btn-info mt-2"
           onclick="window.location.href='/pages/modify_userinfo.php'">编辑个人信息</button>
       </div>
@@ -16,7 +35,11 @@
       <!-- 个人简介 -->
       <div class="bg-white rounded-md shadow-sm p-4 mb-4">
         <h2 class="text-xl font-bold">个人简介</h2>
-        <p class="mt-2 text-gray-700">这里是用户的个人简介，可以包括用户的兴趣、专业领域等信息。</p>
+        <p class="mt-2 text-gray-700">
+          <?php
+          echo $desc;
+          ?>
+        </p>
       </div>
       <!-- 内容选项卡 -->
       <div class="bg-white rounded-md shadow-sm">
@@ -45,7 +68,16 @@
         <div class="p-4">
           <!-- 在这里添加选项卡的内容，例如用户的文章、评论等 -->
           <?php
-          include_once '../components/article_card.php';
+          $sql = "SELECT * FROM article WHERE article_reviewer_uid = '{$uid}'";
+          $cards = $conn->query($sql);
+          if ($cards->num_rows > 0) {
+            foreach ($cards as $card) {
+              $title = $card['article_name'];
+              $desc = $card['article_desc'];
+              $cover = $card['article_cover'];
+              include '../components/article_card.php';
+            }
+          }
           ?>
         </div>
       </div>
