@@ -7,10 +7,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src='../js/simplemde.js'></script>
+  <script src='../js/tailwind.js'></script>
   <link href="../css/daisy.css" rel="stylesheet" type="text/css" />
   <link href='../css/editor.css' rel="stylesheet" type="text/css" />
-  <link href="../css/simplemde.css" rel="stylesheet" type="text/css" />
   <link href="../css/markdown.css" rel="stylesheet" type="text/css">
+  <link href="../css/simplemde.css" rel="stylesheet" type="text/css" />
+  <script>
+    tailwind.config = {
+      corePlugins: {
+        preflight: false,
+      }
+    }
+  </script>
 </head>
 
 <body>
