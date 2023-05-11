@@ -18,6 +18,7 @@ if ($result->num_rows > 0) {
   $_SESSION['username'] = $username;
   header('Location: ../index.php'); // 修改为登录成功后的页面
 } else {
+  // NOTE: 这里应该有更详细的错误提示
   echo "用户名或密码错误";
 }
 

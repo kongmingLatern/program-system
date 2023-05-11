@@ -12,43 +12,41 @@
 </head>
 
 <body class='bg-[#F2F3F5]'>
-  <div id="app">
 
-    <!-- 头部 -->
-    <?php
-    include_once './views/index/header.php'
-      ?>
-
-    <!-- 轮播图 -->
-
-    <?php
-    include_once './components/carousel.php';
+  <!-- 头部 -->
+  <?php
+  include_once './views/index/header.php'
     ?>
 
+  <!-- 轮播图 -->
 
-    <!-- 导航栏 -->
-    <?php
-    include_once './views/index/navbar.php'
-      ?>
-
-
-    <!-- 内容 -->
-    <?php
-    include_once './views/index/main.php'
-      ?>
-
-    <div class="divider"></div>
+  <?php
+  include_once './components/carousel.php';
+  ?>
 
 
-    <!-- 底部 -->
-    <?php
-    include_once './views/index/footer.php'
-      ?>
+  <!-- 导航栏 -->
+  <?php
+  include_once './views/index/navbar.php';
+  ?>
 
-  </div>
+
+  <!-- 内容 -->
+  <?php
+  include_once './views/index/main.php';
+  ?>
+
+  <div class="divider"></div>
+
+
+  <!-- 底部 -->
+  <?php
+  include_once './views/index/footer.php';
+  ?>
+
 
   <script>
-    const { createApp } = Vue
+    // const { createApp } = Vue
     function redirectToDetailsPage(card) {
       window.location.href = "/pages/detail.php?card=" + card
     }
@@ -56,13 +54,13 @@
       window.location.href = "/pages/my.php"
     }
 
-    createApp({
-      data() {
-        return {
-          title: "header1"
-        }
-      },
-    }).mount('#app')
+    // createApp({
+    //   data() {
+    //     return {
+    //       title: "header1"
+    //     }
+    //   },
+    // }).mount('#app')
   </script>
 
 </body>

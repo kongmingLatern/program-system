@@ -28,6 +28,7 @@ if ($stmt->execute()) {
   echo "<script>alert('注册成功!')</script>";
   header("Location: ../pages/login.php");
 } else {
+  // NOTE: 这里应该有更详细的错误提示
   echo "<script>alert('注册失败!')</script>";
 }
 ?>
