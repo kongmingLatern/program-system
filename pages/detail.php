@@ -40,6 +40,16 @@
   ?>
 
   <!-- </div> -->
+  <?php
+  include_once "../config.php";
+  // 根据 article_id 查询文章内容
+  $article_id = $_GET["card"];
+  $sql = "SELECT * FROM article WHERE article_id = '{$article_id}'";
+  $result = $conn->query($sql);
+  $article = $result->fetch_assoc();
+  $content = $article["article_content"];
+  echo $content;
+  ?>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -47,7 +57,8 @@
       converter.setOption('tasklists', true);
       converter.setOption('disableForced4SpacesIndentedSublists', true);
       converter.setFlavor('github');
-      const html = converter.makeHtml(`<?php echo get_markdown_content(); ?>`);
+
+      const html = converter.makeHtml(`<?php echo $content; ?>`);
       document.getElementById('markdown-content').innerHTML = html;
     });   
   </script>
