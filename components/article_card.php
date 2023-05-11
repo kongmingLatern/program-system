@@ -1,6 +1,6 @@
 <div class="p-4">
   <!-- 文章卡片 -->
-  <div class="flex space-x-4 bg-white rounded-md shadow-sm p-4 mb-4">
+  <div class="card card-side flex space-x-4 bg-[#fffaf0] rounded-md shadow-sm p-4 mb-4">
     <!-- 文章缩略图 -->
     <img class="h-30 w-32 object-cover rounded" src="<?php echo $cover; ?>" alt="Article image">
     <!-- 文章内容 -->
@@ -38,5 +38,4 @@
       </div>
     </div>
   </div>
-  <!-- 在这里添加更多文章卡片 -->
 </div>

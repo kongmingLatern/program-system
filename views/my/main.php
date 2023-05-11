@@ -68,7 +68,7 @@
         <div class="p-4">
           <!-- 在这里添加选项卡的内容，例如用户的文章、评论等 -->
           <?php
-          $sql = "SELECT * FROM article WHERE article_reviewer_uid = '{$uid}'";
+          $sql = "SELECT * FROM article WHERE article_releaser_uid = '{$uid}'";
           $cards = $conn->query($sql);
           if ($cards->num_rows > 0) {
             foreach ($cards as $card) {

@@ -9,8 +9,6 @@
   <link href='../css/markdown.css' rel="stylesheet" type="text/css" />
   <script src="../js/tailwind.js"></script>
   <script src='../js/showdown.js'></script>
-
-  <!-- <script src="../js/vue.js"></script> -->
   <script>
     tailwind.config = {
       corePlugins: {
@@ -18,11 +16,9 @@
       }
     }
   </script>
-  <?php include_once('../middleware/markdown.php'); ?>
 </head>
 
 <body>
-  <!-- <div id="app"> -->
   <!-- 头部 -->
   <?php
   include_once '../views/index/header.php';
@@ -39,7 +35,6 @@
   include_once '../views/index/footer.php';
   ?>
 
-  <!-- </div> -->
   <?php
   include_once "../config.php";
   // 根据 article_id 查询文章内容

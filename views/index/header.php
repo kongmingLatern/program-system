@@ -14,7 +14,7 @@
 
     <form method="get" class='relative'>
       <input name='article' type="text" placeholder="搜索文章" class="input input-bordered input-primary " />
-      <button type='submit' class='btn btn-outline absolute right-0 top-[8px]'>🍭</button>
+      <button type='submit' class='btn btn-outline absolute right-0 top-0'>🍭</button>
     </form>
     <div class="avatar dropdown dropdown-end dropdown-hover placeholder cursor-pointer ml-3"
       onclick="redirectToPersonal()">
