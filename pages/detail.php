@@ -18,7 +18,7 @@
       }
     }
   </script>
-  <?php require_once('../middleware/markdown.php'); ?>
+  <?php include_once('../middleware/markdown.php'); ?>
 </head>
 
 <body>

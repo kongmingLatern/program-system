@@ -17,7 +17,7 @@
     <!-- 个人信息卡片 -->
     <div class="w-1/4 p-4">
       <div class="bg-white rounded-md shadow-sm p-4 text-center">
-        <img class="h-24 w-24 rounded-full mx-auto" src="https://via.placeholder.com/100" alt="User avatar">
+        <img class="h-24 w-24 rounded-full mx-auto" src="<?php echo $avatar; ?>" alt="User avatar">
         <h2 class="mt-2 text-center text-2xl font-bold">
           <?php echo $nickname; ?>
         </h2>
