@@ -15,7 +15,7 @@
       $t = $table["table"];
       foreach ($table["content"] as $content) {
         echo "<tr>";
-        echo "<form action='../service/delete.php' method='post'>";
+        echo "<form action='/service/delete.php' method='post'>";
         foreach ($content as $key => $value) {
           $id = reset($content);
           $k = key($content);
