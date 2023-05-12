@@ -13,7 +13,8 @@ $table = [
     "分类",
     "操作"
   ],
-  "content" => []
+  "content" => [],
+  "table" => "category",
 ];
 
 while ($user = $result->fetch_assoc()) {

@@ -22,7 +22,8 @@ $table = [
     "权限",
     "操作"
   ],
-  "content" => []
+  "content" => [],
+  "table" => 'user'
 ];
 
 while ($user = $result->fetch_assoc()) {

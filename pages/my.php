@@ -10,6 +10,8 @@
 </head>
 
 <body>
+  <?php
+  ?>
   <!-- 头部 -->
   <?php
   include_once '../views/index/header.php';

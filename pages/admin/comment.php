@@ -18,7 +18,8 @@ $table = [
     "评论时间",
     "操作"
   ],
-  "content" => []
+  "content" => [],
+  "table" => "comment",
 ];
 
 while ($user = $result->fetch_assoc()) {

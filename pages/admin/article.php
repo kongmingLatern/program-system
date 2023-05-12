@@ -22,7 +22,8 @@ $table = [
     "点赞数",
     "操作"
   ],
-  "content" => []
+  "content" => [],
+  "table" => "article",
 ];
 
 while ($user = $result->fetch_assoc()) {

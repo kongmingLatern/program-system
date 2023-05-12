@@ -1,7 +1,8 @@
 <?php
 include_once '../config.php';
 header("Content-type: text/html; charset=utf-8");
-$target_dir = "../upload/" . date('Y-m-d') . "/";
+$target_dir = $_COOKIE["root_path"] . "/upload/" . date('Y-m-d') . "/";
+$dir = "/upload/" . date('Y-m-d') . "/";
 $fileId = 'avatar';
 
 if (!file_exists($target_dir)) {
@@ -10,8 +11,11 @@ if (!file_exists($target_dir)) {
 
 // $target_file = $target_dir . basename($_FILES[$fileId]["name"]);
 $imageFileType = pathinfo($_FILES[$fileId]["name"], PATHINFO_EXTENSION);
-$target_file = $target_dir . time() . '.' . $imageFileType;
+$suffix = time() . '.' . $imageFileType;
+$target_file = $target_dir . $suffix;
 $uploadOk = 1;
+
+$avatar = $dir . $suffix;
 
 // 检查是否有文件被上传
 if (isset($_POST["submit"])) {
@@ -46,7 +50,7 @@ if ($uploadOk == 0) {
   $desc = $_POST["desc"];
   $job = $_POST["job"];
   $sql = "UPDATE user 
-          SET nickname = '{$nickname}', `desc` = '{$desc}', avatar = '{$target_file}', job = '{$job}'
+          SET nickname = '{$nickname}', `desc` = '{$desc}', avatar = '{$avatar}', job = '{$job}'
           WHERE uid = '{$_COOKIE['uid']}'
             ";
   $result = $conn->query($sql);

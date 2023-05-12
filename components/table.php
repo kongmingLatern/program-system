@@ -12,9 +12,13 @@
     </thead>
     <tbody>
       <?php
+      $t = $table["table"];
       foreach ($table["content"] as $content) {
         echo "<tr>";
+        echo "<form action='../service/delete.php' method='post'>";
         foreach ($content as $key => $value) {
+          $id = reset($content);
+          $k = key($content);
           if (strpos($key, "avatar") !== false || strpos($key, "cover") !== false) {
             echo "<td><img src='$value' alt='avatar' class='w-32 h-32'></td>";
             continue;
@@ -29,8 +33,12 @@
           echo "<td>$value</td>";
         }
         echo "<td>";
-        echo "<button class='btn btn-error'>删除</button>";
+        echo "<input type='hidden' name='id' value='$id' />";
+        echo "<input type='hidden' name='key' value='$k' />";
+        echo "<input type='hidden' name='table' value='$t' />";
+        echo "<button type='submit' class='btn btn-error'>删除</button>";
         echo "</td>";
+        echo "</form>";
         echo "</tr>";
       }
       ?>
