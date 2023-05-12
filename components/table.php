@@ -15,6 +15,17 @@
       foreach ($table["content"] as $content) {
         echo "<tr>";
         foreach ($content as $key => $value) {
+          if (strpos($key, "avatar") !== false || strpos($key, "cover") !== false) {
+            echo "<td><img src='$value' alt='avatar' class='w-32 h-32'></td>";
+            continue;
+          } else if (strpos($key, "content") !== false || strpos($key, "desc") !== false) {
+            echo "<td>
+                <p class='max-w-[500px] overflow-hidden text-ellipsis'>
+                    {$value}
+                </p>
+              </td>";
+            continue;
+          }
           echo "<td>$value</td>";
         }
         echo "<td>";
