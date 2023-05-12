@@ -25,6 +25,12 @@ $avatar = $user["avatar"];
     </div>
     <!-- 个人简介 -->
     <div class="flex items-start mb-4">
+      <label for="job" class="w-24 text-gray-700">个人职业</label>
+      <input type="text" id="job" name="job"
+        class="flex-1 p-2 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
+        placeholder="请输入个人职业">
+    </div>
+    <div class="flex items-start mb-4">
       <label for="desc" class="w-24 text-gray-700">个人简介</label>
       <textarea id="desc"
         class="flex-1 p-2 h-32 rounded border border-gray-300 focus:outline-none focus:border-indigo-500" name="desc"

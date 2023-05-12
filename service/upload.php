@@ -44,8 +44,9 @@ if ($uploadOk == 0) {
 } else {
   $nickname = $_POST["nickname"];
   $desc = $_POST["desc"];
+  $job = $_POST["job"];
   $sql = "UPDATE user 
-          SET nickname = '{$nickname}', `desc` = '{$desc}', avatar = '{$target_file}' 
+          SET nickname = '{$nickname}', `desc` = '{$desc}', avatar = '{$target_file}', job = '{$job}'
           WHERE uid = '{$_COOKIE['uid']}'
             ";
   $result = $conn->query($sql);
