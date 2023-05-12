@@ -19,6 +19,16 @@
 </head>
 
 <body>
+  <?php
+  include_once "../config.php";
+  // 根据 article_id 查询文章内容
+  $article_id = $_GET["card"];
+  $sql = "SELECT * FROM article WHERE article_id = '{$article_id}'";
+  $result = $conn->query($sql);
+  $article = $result->fetch_assoc();
+  $content = $article["article_content"];
+  $cover = $article["article_cover"];
+  ?>
   <!-- 头部 -->
   <?php
   include_once '../views/index/header.php';
@@ -35,16 +45,6 @@
   include_once '../views/index/footer.php';
   ?>
 
-  <?php
-  include_once "../config.php";
-  // 根据 article_id 查询文章内容
-  $article_id = $_GET["card"];
-  $sql = "SELECT * FROM article WHERE article_id = '{$article_id}'";
-  $result = $conn->query($sql);
-  $article = $result->fetch_assoc();
-  $content = $article["article_content"];
-  echo $content;
-  ?>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {

@@ -1,7 +1,9 @@
-<?php
-$card = $_GET['card'];
-?>
 <div class="container mx-auto px-4 py-5">
+  <!-- 内容 -->
+  <div class='flex justify-center'>
+    <img src='<?php echo $cover; ?>' alt='cover' class='max-w-[600px] max-h-[450px] object-contain' />
+  </div>
+
   <p id="markdown-content" class="bg-white p-4"></p>
 
   <div class="bg-white rounded-lg shadow-lg p-5">
