@@ -26,7 +26,7 @@
   <?php
   include_once '../views/index/footer.php';
   ?>
-
 </body>
+
 
 </html>

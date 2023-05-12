@@ -20,14 +20,14 @@
           <label for="username" class="block text-gray-700">用户名</label>
           <input type="username" id="username" name='username'
             class="mt-1 w-full p-2 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
-            placeholder="Email">
+            placeholder="请输入用户名">
         </div>
         <!-- 密码 -->
         <div class="mb-4">
           <label for="password" class="block text-gray-700">密码</label>
           <input type="password" id="password" name='password'
             class="mt-1 w-full p-2 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
-            placeholder="Password">
+            placeholder="请输入密码">
         </div>
         <!-- 提交按钮 -->
         <div class="flex justify-end">
