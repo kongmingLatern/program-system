@@ -12,6 +12,12 @@
 
 <body class='bg-[#F2F3F5]'>
 
+  <?php
+  define('ROOT_PATH', realpath(dirname(__FILE__)));
+  // 将路径保存在缓存中
+  setcookie('root_path', ROOT_PATH, time() + 3600 * 24 * 7, "/");
+  ?>
+
   <!-- 头部 -->
   <?php
   include_once './views/index/header.php'
