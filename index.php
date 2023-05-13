@@ -51,21 +51,12 @@
 
 
   <script>
-    // const { createApp } = Vue
     function redirectToDetailsPage(card) {
       window.location.href = "/pages/detail.php?card=" + card
     }
     function redirectToPersonal() {
       window.location.href = "/pages/my.php"
     }
-
-    // createApp({
-    //   data() {
-    //     return {
-    //       title: "header1"
-    //     }
-    //   },
-    // }).mount('#app')
   </script>
 
 </body>
