@@ -30,6 +30,7 @@
     </div>
   </div>
   <div>
+    <!-- NOTE:文章内容 -->
     <textarea name="article_content" id="editor" cols="30" rows="10"></textarea>
   </div>
 </form>
