@@ -59,7 +59,8 @@
         if (xhr.status === 200) {
           // 上传成功后，将图片URL插入到Markdown文本中
           const imageUrl = xhr.responseText;
-          simplemde.value('![](' + imageUrl + ')');
+          // 追加值
+          simplemde.value(simplemde.value() + '\n![](' + imageUrl + ')');
         }
       };
       xhr.send('image=' + encodeURIComponent(dataUrl));
