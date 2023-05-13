@@ -20,7 +20,7 @@
           $id = reset($content);
           $k = key($content);
           if (strpos($key, "avatar") !== false || strpos($key, "cover") !== false) {
-            echo "<td><img src='$value' alt='avatar' class='w-32 h-32'></td>";
+            echo "<td><img src='$value' alt='avatar' class='w-32 min-w-[150px] min-h-[100px] object-contain  h-32'></td>";
             continue;
           } else if (strpos($key, "content") !== false || strpos($key, "desc") !== false) {
             echo "<td>

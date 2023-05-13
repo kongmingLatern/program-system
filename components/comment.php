@@ -1,12 +1,16 @@
 <div class="flex space-x-3 p-4 bg-white rounded-md shadow-sm">
-  <img class="h-10 w-10 rounded-full" src="https://via.placeholder.com/100" alt="User avatar">
+  <img class="h-10 w-10 rounded-full" src="<?php echo $comment_avatar; ?>" alt="User avatar">
   <div class="flex-1">
     <div class="flex items-center justify-between">
-      <div class="text-sm font-bold">Username</div>
+      <div class="text-sm font-bold">
+        <?php echo $comment_nickname; ?>
+      </div>
       <div class="text-xs text-gray-500">10分钟前</div>
     </div>
     <div class="mt-2 text-sm text-gray-700">
-      这是一个评论示例，用于表示用户的反馈和观点。
+      <?php
+      echo $comment_content;
+      ?>
     </div>
     <div class="mt-2 flex items-center space-x-2">
       <button class="flex items-center space-x-1 text-gray-500 hover:text-blue-600 transition-colors">

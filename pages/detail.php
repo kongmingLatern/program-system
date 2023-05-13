@@ -28,6 +28,15 @@
   $article = $result->fetch_assoc();
   $content = $article["article_content"];
   $cover = $article["article_cover"];
+
+
+  // 根据 uid 查询用户信息
+  $uid = $_COOKIE["uid"];
+  $sql = "SELECT * FROM user WHERE uid = '{$uid}'";
+  $result = $conn->query($sql);
+  $user = $result->fetch_assoc();
+  $avatar = $user["avatar"];
+  $nickname = $user["nickname"];
   ?>
   <!-- 头部 -->
   <?php
