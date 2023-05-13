@@ -20,6 +20,7 @@
         $comment_nickname = $comment['nickname'];
         $comment_content = $comment['comment_content'];
         $comment_avatar = $comment['avatar'];
+        $comment_create_time = $comment['create_time'];
         include '../components/comment.php';
       }
     }

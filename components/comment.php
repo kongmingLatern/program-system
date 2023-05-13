@@ -5,7 +5,31 @@
       <div class="text-sm font-bold">
         <?php echo $comment_nickname; ?>
       </div>
-      <div class="text-xs text-gray-500">10分钟前</div>
+      <div class="text-xs text-gray-500">
+        <?php
+        $currentTimestamp = time(); // 当前时间戳
+        $publishTimestamp = strtotime($comment_create_time); // 将发布时间转换为时间戳
+        $timeDifference = $currentTimestamp - $publishTimestamp; // 计算时间差值（单位：秒）
+        
+        // 将时间差值格式化为天、小时、分钟和秒
+        $days = floor($timeDifference / (60 * 60 * 24));
+        $hours = floor(($timeDifference % (60 * 60 * 24)) / (60 * 60));
+        $minutes = floor(($timeDifference % (60 * 60)) / 60);
+        $seconds = $timeDifference % 60;
+
+        // 输出时间差值
+        if ($days > 0) {
+          echo "{$days}天前";
+        } elseif ($hours > 0) {
+          echo "{$hours}小时前";
+        } elseif ($minutes > 0) {
+          echo "{$minutes}分钟前";
+        } else {
+          echo "{$seconds}秒前";
+        }
+
+        ?>
+      </div>
     </div>
     <div class="mt-2 text-sm text-gray-700">
       <?php
