@@ -1,10 +1,8 @@
-<form method="post" action='save.php' enctype="multipart/form-data">
+<form method="post" action='../service/add_news.php' enctype="multipart/form-data">
   <div class="mb-2 flex justify-between items-center p-2">
-    <input name='title' placeholder="输入文章标题..." class="input w-full max-w-xs text-xl" />
-    <!-- The button to open modal -->
+    <input name='article_name' placeholder="输入文章标题..." class="input w-full max-w-xs text-xl" />
     <label for="my-modal" class="btn btn-primary flex items-center w-[70px] h-[45px]">发布</label>
 
-    <!-- Put this part before </body> tag -->
     <input type="checkbox" id="my-modal" class="modal-toggle" />
     <div class="modal">
       <div class="modal-box relative">
@@ -15,6 +13,11 @@
           <label for='cover'>文章封面：</label>
           <input type='file' id='cover' name='cover' placeholder="输入文章封面..."
             class="file-input w-full max-w-xs text-sm" />
+        </p>
+        <p class="py-4">
+          <label for='cover'>文章分类：</label>
+          <input type='text' id='category_name' name='category_name' placeholder="输入文章分类"
+            class="input w-full max-w-xs text-sm" />
         </p>
         <p class='py-4'>
           <label for='desc'>文章描述：</label>
@@ -27,6 +30,6 @@
     </div>
   </div>
   <div>
-    <textarea name="textarea" id="editor" cols="30" rows="10"></textarea>
+    <textarea name="article_content" id="editor" cols="30" rows="10"></textarea>
   </div>
 </form>
