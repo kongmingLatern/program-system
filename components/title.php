@@ -9,15 +9,17 @@
   <div class="bg-white rounded-lg shadow-lg p-5">
     <div class="mt-5">
       <span class="text-gray-500">作者：</span>
-      <span class="text-gray-800">掘金作者</span>
+      <span class="text-gray-800">
+        <?php echo $nickname; ?>
+      </span>
     </div>
     <div class="mt-2">
       <span class="text-gray-500">发布时间：</span>
-      <span class="text-gray-800">2023-05-09</span>
-    </div>
-    <div class="mt-2">
-      <span class="text-gray-500">阅读数：</span>
-      <span class="text-gray-800">1000+</span>
+      <span class="text-gray-800">
+        <?php
+        echo $create_time;
+        ?>
+      </span>
     </div>
   </div>
 </div>

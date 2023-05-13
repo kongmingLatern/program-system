@@ -28,6 +28,7 @@
   $article = $result->fetch_assoc();
   $content = $article["article_content"];
   $cover = $article["article_cover"];
+  $create_time = $article["create_time"];
 
 
   // 根据 uid 查询用户信息
@@ -37,6 +38,7 @@
   $user = $result->fetch_assoc();
   $avatar = $user["avatar"];
   $nickname = $user["nickname"];
+  $job = $user["job"];
   ?>
   <!-- 头部 -->
   <?php
