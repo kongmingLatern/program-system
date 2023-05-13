@@ -38,13 +38,21 @@ if (
   $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
   && $imageFileType != "gif"
 ) {
-  echo "对不起，您的文件格式不被允许";
   $uploadOk = 0;
 }
 
 // 检查是否有错误发生
 if ($uploadOk == 0) {
-  echo "对不起，您的文件不被允许上传";
+  // 更新除了头像之外的信息
+  $nickname = $_POST["nickname"];
+  $desc = $_POST["desc"];
+  $job = $_POST["job"];
+  $sql = "UPDATE user 
+          SET nickname = '{$nickname}', `desc` = '{$desc}', job = '{$job}'
+          WHERE uid = '{$_COOKIE['uid']}'
+            ";
+  $result = $conn->query($sql);
+  header("Location: ../pages/my.php");
 } else {
   $nickname = $_POST["nickname"];
   $desc = $_POST["desc"];
