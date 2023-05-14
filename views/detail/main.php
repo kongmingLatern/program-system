@@ -9,7 +9,7 @@
     ?>
     <?php
     $sql = "SELECT * FROM comment, user 
-            WHERE comment_article_id = '{$_GET['card']}' AND comment_uid = '$_COOKIE[uid]' AND comment_uid = uid
+            WHERE comment_article_id = '{$_GET['card']}' AND comment_uid = uid
             ORDER BY create_time DESC";
 
     $comments = $conn->query($sql);

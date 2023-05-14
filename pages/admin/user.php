@@ -32,7 +32,7 @@ while ($user = $result->fetch_assoc()) {
   $user_info["username"] = $user["username"];
   $user_info["nickname"] = $user["nickname"];
   $user_info["job"] = $user["job"];
-  $user_info["desc"] = $user["desc"];
+  $user_info["desc"] = $user["introduction"];
   $user_info["avatar"] = $user["avatar"];
   $user_info["permissions"] = $user["isAuth"];
 

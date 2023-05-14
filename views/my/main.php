@@ -9,7 +9,7 @@
   $uid = $user['uid'];
   $nickname = $user['nickname'];
   $avatar = $user['avatar'];
-  $desc = $user['desc'];
+  $desc = $user['introduction'];
   $job = $user['job'];
   ?>
   <!-- NOTE: 卡片 -->

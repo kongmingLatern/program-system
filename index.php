@@ -8,15 +8,14 @@
   <link href="./css/daisy.css" rel="stylesheet" type="text/css" />
   <script src="./js/tailwind.js"></script>
   <script src="./js/vue.js"></script>
-</head>
-
-<body class='bg-[#F2F3F5]'>
-
   <?php
   define('ROOT_PATH', realpath(dirname(__FILE__)));
   // 将路径保存在缓存中
   setcookie('root_path', ROOT_PATH, time() + 3600 * 24 * 7, "/");
   ?>
+</head>
+
+<body class='bg-[#F2F3F5]'>
 
   <!-- 头部 -->
   <?php

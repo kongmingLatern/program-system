@@ -27,7 +27,6 @@ $avatar = $user["avatar"];
       onclick="redirectToPersonal()">
 
       <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-        <span class="text-sm">友利</span>
         <img src='<?php echo $avatar; ?>' alt='头像' />
       </div>
       <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">

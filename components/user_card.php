@@ -1,7 +1,7 @@
 <div class="card w-96 bg-base-100 shadow-xl">
   <div class="card-body">
     <div class="card-title">
-      <img src='<?php echo $avatar; ?>' class="w-12 h-12 object-contain" />
+      <img src='<?php echo $article_avatar; ?>' class="w-12 h-12 object-contain" />
       <div>
         <div class="font-normal text-lg">
           <?php

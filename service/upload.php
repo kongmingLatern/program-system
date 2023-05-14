@@ -48,9 +48,10 @@ if ($uploadOk == 0) {
   $desc = $_POST["desc"];
   $job = $_POST["job"];
   $sql = "UPDATE user 
-          SET nickname = '{$nickname}', `desc` = '{$desc}', job = '{$job}'
+          SET nickname = '{$nickname}', introduction = '{$desc}', job = '{$job}'
           WHERE uid = '{$_COOKIE['uid']}'
             ";
+
   $result = $conn->query($sql);
   header("Location: ../pages/my.php");
 } else {
@@ -58,7 +59,7 @@ if ($uploadOk == 0) {
   $desc = $_POST["desc"];
   $job = $_POST["job"];
   $sql = "UPDATE user 
-          SET nickname = '{$nickname}', `desc` = '{$desc}', avatar = '{$avatar}', job = '{$job}'
+          SET nickname = '{$nickname}', introduction = '{$desc}', avatar = '{$avatar}', job = '{$job}'
           WHERE uid = '{$_COOKIE['uid']}'
             ";
   $result = $conn->query($sql);

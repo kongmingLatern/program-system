@@ -4,13 +4,13 @@ $sql = "SELECT * FROM user WHERE uid = '{$_COOKIE['uid']}'";
 $result = $conn->query($sql);
 $user = $result->fetch_assoc();
 $nickname = $user["nickname"];
-$desc = $user["desc"];
+$desc = $user["introduction"];
 $job = $user["job"];
 $avatar = $user["avatar"];
 ?>
 <div class="bg-white rounded-md shadow-sm p-4 max-w-lg mx-auto">
   <h2 class="text-2xl font-bold mb-4">修改个人信息</h2>
-  <form action='../service/upload.php' enctype="multipart/form-data" method="post">
+  <form action='/service/upload.php' enctype="multipart/form-data" method="post">
     <!-- 头像 -->
     <div class="flex items-center mb-4">
       <label for="avatar" class="w-24 text-gray-700">头像</label>

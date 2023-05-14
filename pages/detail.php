@@ -29,16 +29,6 @@
   $content = $article["article_content"];
   $cover = $article["article_cover"];
   $create_time = $article["create_time"];
-
-
-  // 根据 uid 查询用户信息
-  $uid = $_COOKIE["uid"];
-  $sql = "SELECT * FROM user WHERE uid = '{$uid}'";
-  $result = $conn->query($sql);
-  $user = $result->fetch_assoc();
-  $avatar = $user["avatar"];
-  $nickname = $user["nickname"];
-  $job = $user["job"];
   ?>
   <!-- 头部 -->
   <?php
@@ -47,6 +37,14 @@
 
   <!-- 内容 -->
   <?php
+  // 根据 uid 查询用户信息
+  $uid = $_COOKIE["uid"];
+  $sql = "SELECT * FROM user, article WHERE uid = article_releaser_uid AND article_id = '{$article_id}'";
+  $result = $conn->query($sql);
+  $user = $result->fetch_assoc();
+  $article_avatar = $user["avatar"];
+  $nickname = $user["nickname"];
+  $job = $user["job"];
   include_once '../views/detail/main.php';
   ?>
 

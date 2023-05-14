@@ -9,10 +9,11 @@ $sql = "DELETE FROM {$table} WHERE {$key} = '{$id}'";
 $result = $conn->query($sql);
 
 if ($result) {
-  echo json_encode([
-    "code" => 200,
-    "msg" => "删除成功"
-  ]);
+  header("Location: /pages/admin/index.php");
+  // echo json_encode([
+  //   "code" => 200,
+  //   "msg" => "删除成功"
+  // ]);
 } else {
   echo json_encode([
     "code" => 400,
