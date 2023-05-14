@@ -50,15 +50,13 @@ if (
 if ($uploadOk == 0) {
   echo "对不起，文章发布失败";
 } else {
-  $sql = "INSERT INTO article 
-          VALUES('{$id}', '{$_COOKIE['uid']}', '{$article_name}', '{$category_name}','{$cover}', '{$article_content}', 0, now(), '{$desc}')";
-  $result = $conn->query($sql);
+
+  $stmt = $conn->prepare("INSERT INTO article VALUES (?, ?, ?, ?, ?, ?, 0, NOW(), ?)");
+  $stmt->bind_param("issssss", $id, $_COOKIE['uid'], $article_name, $category_name, $cover, $article_content, $desc);
+
+  $stmt->execute();
   if (move_uploaded_file($_FILES[$fileId]["tmp_name"], $target_file)) {
-    if ($result) {
-      header("Location: ../index.php");
-    } else {
-      echo "更新失败";
-    }
+    header("Location: ../index.php");
   } else {
     echo "上传图片发生错误";
   }

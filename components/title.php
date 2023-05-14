@@ -4,7 +4,11 @@
     <img src='<?php echo $cover; ?>' alt='cover' class='max-w-[600px] max-h-[450px] object-contain' />
   </div>
 
-  <p id="markdown-content" class="bg-white p-4"></p>
+  <div id="markdown-content" style='display:none;'>
+    <?php echo $content; ?>
+  </div>
+
+  <p id='markdown-display' class="bg-white p-4"></p>
 
   <div class="bg-white rounded-lg shadow-lg p-5">
     <div class="mt-5">

@@ -59,11 +59,17 @@
     document.addEventListener('DOMContentLoaded', function () {
       const converter = new showdown.Converter();
       converter.setOption('tasklists', true);
+      converter.setOption('tables', true);
       converter.setOption('disableForced4SpacesIndentedSublists', true);
+      converter.setOption('smartIndentationFix', true);
+      converter.setOption('openLinksInNewWindow', true);
+      converter.setOption('ghMentions', true);
+      converter.setOption('startNumber', 1);
       converter.setFlavor('github');
-
-      const html = converter.makeHtml(`<?php echo $content; ?>`);
-      document.getElementById('markdown-content').innerHTML = html;
+      const div = document.getElementById('markdown-content');
+      const markdown = div.textContent;
+      const html = converter.makeHtml(markdown.trim());
+      document.getElementById('markdown-display').innerHTML = html;
     });   
   </script>
 </body>
