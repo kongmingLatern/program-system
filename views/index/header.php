@@ -19,7 +19,7 @@ $avatar = $user["avatar"];
 
   <div class='flex'>
 
-    <form method="get" class='relative'>
+    <form action='/pages/search.php' method="get" class='relative'>
       <input name='article' type="text" placeholder="搜索文章" class="input input-bordered input-primary " />
       <button type='submit' class='btn btn-outline absolute right-0 top-0'>🍭</button>
     </form>
