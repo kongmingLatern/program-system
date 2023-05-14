@@ -4,7 +4,23 @@
 </div>
 <?php
 include_once '../../config.php';
-$sql = "SELECT * FROM category";
+
+$perPage = 10; // 每页显示10条记录
+$currentPage = isset($_GET['pages']) ? (int) $_GET['pages'] : 1; // 获取当前页码
+$offset = ($currentPage - 1) * $perPage; // 计算偏移量
+
+// 查询总记录数并计算总页数
+$totalRecordsRes = $conn->query("SELECT COUNT(*) AS total 
+                                 FROM category 
+                                 ");
+$totalRecords = $totalRecordsRes->fetch_assoc()['total'];
+$totalPages = ceil($totalRecords / $perPage);
+
+$sql = "SELECT * 
+        FROM category 
+        LIMIT $perPage OFFSET $offset
+        ";
+
 $result = $conn->query($sql);
 
 $table = [

@@ -63,5 +63,31 @@
   ?>
 </body>
 
+<script>
+  const goTo = (currentPage, totalPages, sign = 'plus') => {
+    if (sign === 'plus') {
+      if (currentPage === totalPages) {
+        return
+      } else {
+        // 路由跳转
+        currentPage += 1
+      }
+    } else {
+      if (currentPage === 1) {
+        return
+      } else {
+        // 路由跳转
+        currentPage--
+      }
+    }
+
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set("pages", currentPage);
+
+    const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
+    window.location.href = newUrl;
+  }
+</script>
+
 
 </html>

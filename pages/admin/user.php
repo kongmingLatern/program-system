@@ -7,8 +7,22 @@
 
 include_once "../../config.php";
 
+$perPage = 10; // 每页显示10条记录
+$currentPage = isset($_GET['pages']) ? (int) $_GET['pages'] : 1; // 获取当前页码
+$offset = ($currentPage - 1) * $perPage; // 计算偏移量
 
-$sql = "SELECT * FROM user";
+// 查询总记录数并计算总页数
+$totalRecordsRes = $conn->query("SELECT COUNT(*) AS total 
+                                 FROM user u 
+                                 ");
+$totalRecords = $totalRecordsRes->fetch_assoc()['total'];
+$totalPages = ceil($totalRecords / $perPage);
+
+$sql = "SELECT * 
+        FROM user 
+        LIMIT $perPage OFFSET $offset
+        ";
+
 $result = $conn->query($sql);
 
 $table = [
