@@ -1,6 +1,6 @@
-<main class="flex justify-around min-w-[1000px] max-w-[1200px] mx-auto">
+<main class="flex justify-around min-w-[1000px] max-w-[1200px] mx-auto ">
 
-  <aside class='w-2/3'>
+  <aside class='w-2/3 bg-white mr-5'>
     <?php
     include_once '../components/title.php';
     ?>
@@ -32,18 +32,6 @@
       <?php
       include_once '../components/user_card.php';
       ?>
-    </div>
-    <div class="bottom">
-      <div class="card w-96 bg-neutral text-neutral-content">
-        <div class="card-body items-center text-center">
-          <h2 class="card-title">Cookies!</h2>
-          <p>We are using cookies for no reason.</p>
-          <div class="card-actions justify-end">
-            <button class="btn btn-primary">Accept</button>
-            <button class="btn btn-ghost">Deny</button>
-          </div>
-        </div>
-      </div>
     </div>
   </aside>
 

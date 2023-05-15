@@ -18,7 +18,7 @@
   </script>
 </head>
 
-<body>
+<body class="bg-[#F2F3F5]">
   <?php
   include_once "../config.php";
   // 根据 article_id 查询文章内容
@@ -26,11 +26,12 @@
   $sql = "SELECT * FROM article WHERE article_id = '{$article_id}'";
   $result = $conn->query($sql);
   $article = $result->fetch_assoc();
+  $article_name = $article["article_name"];
   $content = $article["article_content"];
   $cover = $article["article_cover"];
   $create_time = $article["create_time"];
   ?>
-  <!-- 头部 -->
+
   <?php
   include_once '../views/index/header.php';
   ?>

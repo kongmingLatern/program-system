@@ -13,7 +13,7 @@
   error_reporting(E_ALL & ~E_NOTICE); // 设置错误报告级别，排除Notice级别的错误
   include_once '../../views/index/header.php';
   ?>
-  <div class="flex h-screen">
+  <div class="flex">
     <div class="menu w-1/5 bg-gray-100">
       <ul class="p-4">
         <li class="mb-4 h-[50px] leading-[50px] text-lg">

@@ -1,5 +1,33 @@
-<div class="container mx-auto px-4 py-5">
+<div class="container mx-auto px-4">
   <!-- 内容 -->
+  <h1>
+    <?php
+    echo $article_name;
+    ?>
+  </h1>
+
+  <div class="card w-[100%] bg-white">
+    <div class="card-body py-2 px-0">
+      <div class="card-title">
+        <img src='<?php echo $article_avatar; ?>' class="w-12 h-12 object-contain" />
+        <div>
+          <div class="font-normal text-lg">
+            <?php
+            echo $nickname;
+            ?>
+          </div>
+          <div class="font-thin text-sm text-[#888]">
+            发布时间：
+            <?php
+            echo $create_time;
+            ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <div class='flex justify-center'>
     <img src='<?php echo $cover; ?>' alt='cover' class='max-w-[600px] max-h-[450px] object-contain' />
   </div>
@@ -10,20 +38,4 @@
 
   <p id='markdown-display' class="bg-white p-4"></p>
 
-  <div class="bg-white rounded-lg shadow-lg p-5">
-    <div class="mt-5">
-      <span class="text-gray-500">作者：</span>
-      <span class="text-gray-800">
-        <?php echo $nickname; ?>
-      </span>
-    </div>
-    <div class="mt-2">
-      <span class="text-gray-500">发布时间：</span>
-      <span class="text-gray-800">
-        <?php
-        echo $create_time;
-        ?>
-      </span>
-    </div>
-  </div>
 </div>

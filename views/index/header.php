@@ -5,14 +5,29 @@ $result = $conn->query($sql);
 $user = $result->fetch_assoc();
 $avatar = $user["avatar"];
 ?>
-<header class="navbar justify-between border-b-[2px]">
+<header class="navbar justify-between border-b-[2px] border-b-[#eee] bg-white">
   <div>
     <h1 class="font-bold whitespace-nowrap text-2xl px-4">稀土掘金</h1>
     <ul class="menu menu-horizontal w-[100%]">
-      <li class="ml-2"><a href='/index.php'>首页</a></li>
+
+      <?php
+      $sql = "SELECT * FROM category";
+      $result = $conn->query($sql);
+
+      while ($category = $result->fetch_assoc()) {
+        if ($category['category_name'] != '首页') {
+          echo "<li class='ml-2'><a href='/pages/category.php?category={$category['category_name']}'>{$category['category_name']}</a></li>";
+        } else {
+          echo "<li class='ml-2'><a href='/index.php'>{$category['category_name']}</a></li>";
+        }
+      }
+
+      ?>
+
+      <!-- <li class="ml-2"><a href='/index.php'>首页</a></li>
       <li class="ml-2"><a>前端</a></li>
       <li class="ml-2"><a>后端</a></li>
-      <li class="ml-2"><a href='/pages/admin/index.php'>后台</a></li>
+      <li class="ml-2"><a href='/pages/admin/index.php'>后台</a></li> -->
     </ul>
 
   </div>

@@ -4,20 +4,62 @@
   $content  -- 文章内容
   $cover    -- 文章封面
  -->
-<div class="card card-side bg-base-100 shadow-xl mb-2">
-  <div class="card-body w-[900px]">
-    <h2 class="card-title">
+<div
+  class="card card-side rounded-none bg-base-100 w-[720px] h-[140px] border-b-[1px] hover:bg-base-300 hover:ease-in hover:duration-300"
+  onclick="redirectToDetailsPage('<?php echo $id; ?>')">
+  <div class="card-body p-0 pt-[12px] px-[20px]">
+    <div class='text-sm text-[#515767]'>
+      <span class='mr-2'>
+        <?php
+        echo $nickname;
+        ?>
+      </span>
+      <span class='px-2'>
+        |
+      </span>
+      <span>
+        <?php
+
+        $currentTimestamp = time(); // 当前时间戳
+        $publishTimestamp = strtotime($create_time); // 将发布时间转换为时间戳
+        $timeDifference = $currentTimestamp - $publishTimestamp; // 计算时间差值（单位：秒）
+        
+        // 将时间差值格式化为天、小时、分钟和秒
+        $days = floor($timeDifference / (60 * 60 * 24));
+        $hours = floor(($timeDifference % (60 * 60 * 24)) / (60 * 60));
+        $minutes = floor(($timeDifference % (60 * 60)) / 60);
+        $seconds = $timeDifference % 60;
+
+        // 输出时间差值
+        if ($days > 0) {
+          echo "{$days}天前";
+        } elseif ($hours > 0) {
+          echo "{$hours}小时前";
+        } elseif ($minutes > 0) {
+          echo "{$minutes}分钟前";
+        } else {
+          echo "{$seconds}秒前";
+        }
+
+        ?>
+      </span>
+      <span class='px-2'>
+        |
+      </span>
+      <span class='mr-2'>
+        <?php
+        echo $category_name;
+        ?>
+      </span>
+    </div>
+    <h2 class="card-title truncate">
       <?php echo $title; ?>
     </h2>
-    <p>
+    <p class='font-thin text-sm text-[#666] truncate'>
       <?php echo $content; ?>
     </p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary" onclick="redirectToDetailsPage('<?php echo $id; ?>')">Watch</button>
-    </div>
   </div>
-  <figure>
-    <img src=<?php echo $cover; ?> class="w-[300px] h-[250px] object-contain p-4" alt="Movie" />
+  <figure class="p-0 pt-[12px] px-[20px]">
+    <img src=<?php echo $cover; ?> class="w-[120px] h-[80px] object-cover" alt="封面" />
   </figure>
 </div>
-<div class="divider"></div>
