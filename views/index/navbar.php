@@ -1,4 +1,4 @@
-<nav class="w-[1000px] mx-auto border-b-[2px]">
+<nav class="w-[720px] mx-auto border-b-[2px]">
   <ul class="menu menu-horizontal w-[100%] bg-base-100">
 
     <?php

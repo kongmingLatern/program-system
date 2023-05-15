@@ -11,7 +11,7 @@
   <script src="../js/vue.js"></script>
 </head>
 
-<body>
+<body class='bg-[#F2F3F5]'>
 
   <!-- 头部 -->
   <?php

@@ -5,9 +5,9 @@
   $cover    -- 文章封面
  -->
 <div
-  class="card card-side rounded-none bg-base-100 w-[720px] h-[140px] border-b-[1px] hover:bg-base-300 hover:ease-in hover:duration-300"
+  class="card card-side rounded-none bg-base-100 w-[720px] h-[140px] border-b-[1px] hover:bg-[#fafafa] hover:ease-in  cursor-pointer text-ellipsis overflow-hidden"
   onclick="redirectToDetailsPage('<?php echo $id; ?>')">
-  <div class="card-body p-0 pt-[12px] px-[20px]">
+  <div class="card-body p-0 pt-[12px] px-[20px] w-[80%]">
     <div class='text-sm text-[#515767]'>
       <span class='mr-2'>
         <?php
@@ -55,7 +55,7 @@
     <h2 class="card-title truncate">
       <?php echo $title; ?>
     </h2>
-    <p class='font-thin text-sm text-[#666] truncate'>
+    <p class='font-thin text-sm text-[#666]  line-clamp-1'>
       <?php echo $content; ?>
     </p>
   </div>

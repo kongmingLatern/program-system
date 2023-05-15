@@ -1,4 +1,4 @@
-<main class="w-[800px] mx-auto">
+<main class="w-[720px] mx-auto">
   <!-- NOTE: 卡片 -->
   <?php
   include_once $_COOKIE["root_path"] . '/config.php';
