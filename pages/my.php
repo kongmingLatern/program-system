@@ -9,7 +9,7 @@
   <script src="../js/tailwind.js"></script>
 </head>
 
-<body>
+<body class='bg-[#F2F3F5]'>
   <?php
   ?>
   <!-- 头部 -->
@@ -28,6 +28,11 @@
   <?php
   include_once '../views/index/footer.php';
   ?>
+  <script>
+    function redirectToDetailsPage(card) {
+      window.location.href = "/pages/detail.php?card=" + card
+    }
+  </script>
 </body>
 
 

@@ -1,4 +1,4 @@
-<main class="w-[1000px] mx-auto">
+<main class="w-[1000px] mx-auto bg-white">
   <?php
   session_start();
   require_once '../config.php';
@@ -15,7 +15,7 @@
   <!-- NOTE: 卡片 -->
   <div class="flex">
     <!-- 个人信息卡片 -->
-    <div class="w-1/4 p-4">
+    <div class="w-1/4 p-4 border-r-[1px]">
       <div class="bg-white rounded-md shadow-sm p-4 text-center">
         <img class="h-24 w-24 rounded-full mx-auto" src="<?php echo $avatar; ?>" alt="User avatar">
         <h2 class="mt-2 text-center text-2xl font-bold">
@@ -75,6 +75,7 @@
               $title = $card['article_name'];
               $desc = $card['article_desc'];
               $cover = $card['article_cover'];
+              $id = $card['article_id'];
               include '../components/article_card.php';
             }
           }

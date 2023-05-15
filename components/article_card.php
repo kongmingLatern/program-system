@@ -1,6 +1,8 @@
 <div class="p-4">
   <!-- 文章卡片 -->
-  <div class="card card-side flex space-x-4 bg-[#fffaf0] rounded-md shadow-sm p-4 mb-4">
+  <div
+    class="card card-side flex space-x-4 rounded-none bg-base-100 h-[140px] border-b-[1px] hover:bg-[#fafafa] hover:ease-in  cursor-pointer text-ellipsis overflow-hidden"
+    onclick="redirectToDetailsPage('<?php echo $id; ?>')">
     <!-- 文章缩略图 -->
     <img class="h-30 w-32 object-cover rounded" src="<?php echo $cover; ?>" alt="Article image">
     <!-- 文章内容 -->
