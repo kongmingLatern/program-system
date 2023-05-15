@@ -44,28 +44,21 @@
       <!-- 内容选项卡 -->
       <div class="bg-white rounded-md shadow-sm">
         <div class="border-b border-gray-200">
-          <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+          <nav class="-mb-px flex space-x-8 " aria-label="Tabs">
             <a href="#"
-              class="border-indigo-500 text-indigo-600 hover:text-indigo-700 hover:border-indigo-300 w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm"
-              aria-current="page">
+              class="nav text-indigo-600 hover:text-indigo-700 hover:border-indigo-300 w-1/2 py-4 px-1 text-center border-b-2 font-medium text-sm"
+              aria-current="page" onclick='changeTab(0)'>
               文章
             </a>
             <a href="#"
-              class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm">
+              class="nav  text-gray-500 hover:text-indigo-700  hover:border-indigo-300 w-1/2 py-4 px-1 text-center border-b-2 font-medium text-sm"
+              onclick='changeTab(1)'>
               评论
-            </a>
-            <a href="#"
-              class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm">
-              点赞
-            </a>
-            <a href="#"
-              class="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 w-1/4 py-4 px-1 text-center border-b-2 font-medium text-sm">
-              收藏
             </a>
           </nav>
         </div>
         <!-- 选项卡内容 -->
-        <div class="p-4">
+        <div class="p-4 content">
           <!-- 在这里添加选项卡的内容，例如用户的文章、评论等 -->
           <?php
           $sql = "SELECT * FROM article WHERE article_releaser_uid = '{$uid}'";
@@ -76,6 +69,22 @@
               $desc = $card['article_desc'];
               $cover = $card['article_cover'];
               $id = $card['article_id'];
+              include '../components/article_card.php';
+            }
+          }
+          ?>
+        </div>
+        <div class="p-4 content">
+          <!-- 在这里添加选项卡的内容，例如用户的文章、评论等 -->
+          <?php
+          $sql = "SELECT * FROM comment, user, article WHERE comment_uid = '{$uid}' AND comment_uid = uid AND comment_article_id = article_id";
+          $cards = $conn->query($sql);
+          if ($cards->num_rows > 0) {
+            foreach ($cards as $card) {
+              $title = $card['article_name'];
+              $desc = $card['comment_content'];
+              $cover = $card['avatar'];
+              $id = $card['comment_id'];
               include '../components/article_card.php';
             }
           }

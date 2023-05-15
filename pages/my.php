@@ -29,9 +29,29 @@
   include_once '../views/index/footer.php';
   ?>
   <script>
+    (function () {
+      // 默认显示第一个
+      changeTab(0)
+    })()
     function redirectToDetailsPage(card) {
       window.location.href = "/pages/detail.php?card=" + card
     }
+    function changeTab(num) {
+      // Tab 栏切换
+      let tabs = document.getElementsByClassName('nav')
+      console.log(tabs);
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove('border-indigo-500')
+      }
+      tabs[num].classList.add('border-indigo-500')
+      // 内容切换
+      let contents = document.getElementsByClassName('content')
+      for (let i = 0; i < contents.length; i++) {
+        contents[i].classList.add('hidden')
+      }
+      contents[num].classList.remove('hidden')
+    }
+
   </script>
 </body>
 
