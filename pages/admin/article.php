@@ -50,8 +50,8 @@ while ($user = $result->fetch_assoc()) {
   $info["article_name"] = $user["article_name"];
   $info["article_cover"] = $user["article_cover"];
   $info["article_content"] = $user["article_content"];
-  $info["article_like"] = $user["article_like"];
   $info["create_time"] = $user["create_time"];
+  $info["article_like"] = $user["article_like"];
 
   $table["content"][] = $info;
 }

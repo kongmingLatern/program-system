@@ -17,7 +17,7 @@ $totalRecordsRes = $conn->query("SELECT COUNT(*) AS total
 $totalRecords = $totalRecordsRes->fetch_assoc()['total'];
 $totalPages = ceil($totalRecords / $perPage);
 
-$sql = "SELECT comment_id, u.uid, nickname, comment_content, article_id, article_name, c.create_time 
+$sql = "SELECT comment_id, u.uid, nickname, comment_content, article_id, article_name, c.create_time, c.isAllow 
         FROM comment c, user u, article a 
         WHERE c.comment_uid = u.uid AND c.comment_article_id = a.article_id
         LIMIT $perPage OFFSET $offset
@@ -34,6 +34,7 @@ $table = [
     "评论文章id",
     "评论文章",
     "评论时间",
+    "是否允许",
     "操作"
   ],
   "content" => [],
@@ -49,6 +50,7 @@ while ($user = $result->fetch_assoc()) {
   $user_info["article_id"] = $user["article_id"];
   $user_info["article_name"] = $user["article_name"];
   $user_info["create_time"] = $user["create_time"];
+  $user_info["isAllow"] = $user["isAllow"];
 
   // Add user info to content
   $table["content"][] = $user_info;

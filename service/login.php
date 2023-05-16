@@ -13,10 +13,15 @@ $sql = "SELECT * FROM user WHERE username = '{$username}' AND password = '{$pass
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
+  $isAuth = $user["isAuth"];
   $user = $result->fetch_assoc();
   $_SESSION['username'] = $username;
   setcookie('uid', $user["uid"], time() + 3600 * 24 * 7, "/");
-  header('Location: ../index.php'); // 修改为登录成功后的页面
+  if ($isAuth) {
+    header("Location: ../pages/admin/index.php");
+  } else {
+    header('Location: ../index.php');
+  }
 } else {
   // NOTE: 这里应该有更详细的错误提示
   echo "用户名或密码错误";

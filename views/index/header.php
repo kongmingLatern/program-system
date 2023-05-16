@@ -21,13 +21,7 @@ $avatar = $user["avatar"];
           echo "<li class='ml-2'><a href='/index.php'>{$category['category_name']}</a></li>";
         }
       }
-
       ?>
-
-      <!-- <li class="ml-2"><a href='/index.php'>首页</a></li>
-      <li class="ml-2"><a>前端</a></li>
-      <li class="ml-2"><a>后端</a></li>
-      <li class="ml-2"><a href='/pages/admin/index.php'>后台</a></li> -->
     </ul>
 
   </div>
@@ -47,6 +41,7 @@ $avatar = $user["avatar"];
       <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
         <li><a href='<?php echo '/pages/my.php' ?>'>个人中心</a></li>
         <li><a href='<?php echo '/pages/simplemde.php' ?>'>写文章</a></li>
+        <li><a href='<?php echo '/pages/login.php' ?>' onclick='localStorage.clear()'>退出登录</a></li>
       </ul>
     </div>
   </div>

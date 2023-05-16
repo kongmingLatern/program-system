@@ -77,7 +77,7 @@
         <div class="p-4 content">
           <!-- 在这里添加选项卡的内容，例如用户的文章、评论等 -->
           <?php
-          $sql = "SELECT * FROM comment, user, article WHERE comment_uid = '{$uid}' AND comment_uid = uid AND comment_article_id = article_id";
+          $sql = "select * from comment, user, article where comment_uid = '{$_COOKIE["uid"]}' and comment_uid = uid and comment_article_id = article_id";
           $cards = $conn->query($sql);
           if ($cards->num_rows > 0) {
             foreach ($cards as $card) {

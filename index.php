@@ -48,6 +48,10 @@
   include_once './views/index/footer.php';
   ?>
 
+  <?php
+  $conn->close();
+  ?>
+
 
   <script>
     function redirectToDetailsPage(card) {

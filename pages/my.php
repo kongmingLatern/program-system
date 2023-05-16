@@ -28,6 +28,10 @@
   <?php
   include_once '../views/index/footer.php';
   ?>
+
+  <?php
+  $conn->close();
+  ?>
   <script>
     (function () {
       // 默认显示第一个

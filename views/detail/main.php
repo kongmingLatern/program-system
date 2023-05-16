@@ -17,11 +17,15 @@
     // 遍历查询结果
     if ($comments->num_rows > 0) {
       foreach ($comments as $comment) {
-        $comment_nickname = $comment['nickname'];
-        $comment_content = $comment['comment_content'];
-        $comment_avatar = $comment['avatar'];
-        $comment_create_time = $comment['create_time'];
-        include '../components/comment.php';
+        if ($comment['isAllow'] != 1) {
+          continue;
+        } else {
+          $comment_nickname = $comment['nickname'];
+          $comment_content = $comment['comment_content'];
+          $comment_avatar = $comment['avatar'];
+          $comment_create_time = $comment['create_time'];
+          include '../components/comment.php';
+        }
       }
     }
     ?>

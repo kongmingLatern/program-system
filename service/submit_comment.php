@@ -6,7 +6,7 @@ $article_id = $_POST["article_id"];
 $uid = $_COOKIE["uid"];
 $id = uniqid();
 $sql = "INSERT INTO comment 
-        VALUES ('{$id}', '{$uid}', '{$article_id}','{$comment_content}', now())";
+        VALUES ('{$id}', '{$uid}', '{$article_id}','{$comment_content}', now(), 0)";
 
 $result = $conn->query($sql);
 if ($result) {
