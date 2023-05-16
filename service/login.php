@@ -13,8 +13,8 @@ $sql = "SELECT * FROM user WHERE username = '{$username}' AND password = '{$pass
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-  $isAuth = $user["isAuth"];
   $user = $result->fetch_assoc();
+  $isAuth = $user["isAuth"];
   $_SESSION['username'] = $username;
   setcookie('uid', $user["uid"], time() + 3600 * 24 * 7, "/");
   if ($isAuth == 1) {

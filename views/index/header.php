@@ -1,9 +1,18 @@
 <?php
-include_once $_COOKIE["root_path"] . '/config.php';
-$sql = "SELECT * FROM user WHERE uid = '{$_COOKIE['uid']}'";
-$result = $conn->query($sql);
-$user = $result->fetch_assoc();
-$avatar = $user["avatar"];
+error_reporting(E_ALL || ~E_NOTICE);
+$uid = $_COOKIE['uid'];
+if ($uid) {
+  include_once $_COOKIE["root_path"] . '/config.php';
+  $sql = "SELECT * FROM user WHERE uid = '{$uid}'";
+  $result = $conn->query($sql);
+  $user = $result->fetch_assoc();
+  $avatar = $user["avatar"];
+} else {
+  // 未登录
+  // 显示提示信息，跳转到登录页面
+  echo "<script>alert('请先登录')</script>";
+  header("Location: /pages/login.php");
+}
 ?>
 <header class="navbar justify-between border-b-[2px] border-b-[#eee] bg-white">
   <div>
@@ -36,7 +45,14 @@ $avatar = $user["avatar"];
       onclick="redirectToPersonal()">
 
       <div class="bg-neutral-focus text-neutral-content rounded-full w-12">
-        <img src='<?php echo $avatar; ?>' alt='头像' />
+        <img src='
+        <?php
+        if ($avatar) {
+          echo $avatar;
+        } else {
+          echo '/assets/avatar.jpg';
+        }
+        ?>' alt='头像' />
       </div>
       <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
         <li><a href='<?php echo '/pages/my.php' ?>'>个人中心</a></li>

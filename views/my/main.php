@@ -84,7 +84,7 @@
               $title = $card['article_name'];
               $desc = $card['comment_content'];
               $cover = $card['avatar'];
-              $id = $card['comment_id'];
+              $id = $card['comment_article_id'];
               include '../components/article_card.php';
             }
           }

@@ -38,10 +38,22 @@
 
   <script>
     function redirectToDetailsPage(card) {
-      window.location.href = "/pages/detail.php?card=" + card
+      <?php
+      if (include '../service/is_login.php') {
+        echo "window.location.href = \"/pages/detail.php?card=\" + card";
+      } else {
+        echo "window.location.href = \"/pages/login.php\"";
+      }
+      ?>
     }
     function redirectToPersonal() {
-      window.location.href = "/pages/my.php"
+      <?php
+      if (include '../service/is_login.php') {
+        echo "window.location.href = \"/pages/my.php\"";
+      } else {
+        echo "window.location.href = \"/pages/login.php\"";
+      }
+      ?>
     }
   </script>
 

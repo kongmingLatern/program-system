@@ -17,6 +17,7 @@
 
 <body class='bg-[#F2F3F5]'>
 
+
   <!-- 头部 -->
   <?php
   include_once './views/index/header.php'
@@ -55,10 +56,22 @@
 
   <script>
     function redirectToDetailsPage(card) {
-      window.location.href = "/pages/detail.php?card=" + card
+      <?php
+      if ($_COOKIE["uid"]) {
+        echo "window.location.href = \"/pages/detail.php?card=\" + card";
+      } else {
+        echo "window.location.href = \"/pages/login.php\"";
+      }
+      ?>
     }
     function redirectToPersonal() {
-      window.location.href = "/pages/my.php"
+      <?php
+      if ($_COOKIE["uid"]) {
+        echo "window.location.href = \"/pages/my.php\"";
+      } else {
+        echo "window.location.href = \"/pages/login.php\"";
+      }
+      ?>
     }
   </script>
 
