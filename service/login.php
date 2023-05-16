@@ -17,7 +17,7 @@ if ($result->num_rows > 0) {
   $user = $result->fetch_assoc();
   $_SESSION['username'] = $username;
   setcookie('uid', $user["uid"], time() + 3600 * 24 * 7, "/");
-  if ($isAuth) {
+  if ($isAuth == 1) {
     header("Location: ../pages/admin/index.php");
   } else {
     header('Location: ../index.php');
