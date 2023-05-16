@@ -83,7 +83,7 @@
             foreach ($cards as $card) {
               $title = $card['article_name'];
               $desc = $card['comment_content'];
-              $cover = $card['avatar'];
+              $cover = $card['article_cover'];
               $id = $card['comment_article_id'];
               include '../components/article_card.php';
             }

@@ -29,7 +29,7 @@
             class="mt-1 w-full p-2 rounded border border-gray-300 focus:outline-none focus:border-indigo-500"
             placeholder="请输入昵称">
         </div>
-        <!-- 密码 -->
+        <!-- 密码 --> 
         <div class="mb-4">
           <label for="password" class="block text-gray-700">密码</label>
           <input type="password" id="password" name='password'

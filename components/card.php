@@ -37,7 +37,7 @@
           echo "{$hours}小时前";
         } elseif ($minutes > 0) {
           echo "{$minutes}分钟前";
-        } else {
+        } elseif ($seconds > 0) {
           echo "{$seconds}秒前";
         }
 
